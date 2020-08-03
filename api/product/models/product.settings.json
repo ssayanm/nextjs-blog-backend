@@ -31,6 +31,15 @@
       ],
       "plugin": "upload",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "orders": {
+      "via": "products",
+      "collection": "order"
     }
   }
 }
