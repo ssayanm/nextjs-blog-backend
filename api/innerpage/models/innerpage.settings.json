@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "innerpages",
   "info": {
-    "name": "innerpage"
+    "name": "innerpage",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -14,8 +16,7 @@
       "required": true
     },
     "description": {
-      "type": "richtext",
-      "required": true
+      "type": "richtext"
     },
     "image": {
       "model": "file",
@@ -26,7 +27,19 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
+    },
+    "caption": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "smallDescription": {
+      "type": "text"
     }
   }
 }
