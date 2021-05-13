@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "innerpages",
   "info": {
-    "name": "product"
+    "name": "innerpage"
   },
   "options": {
     "increments": true,
@@ -13,10 +13,6 @@
       "type": "string",
       "required": true
     },
-    "price": {
-      "type": "decimal",
-      "default": 20.99
-    },
     "description": {
       "type": "richtext",
       "required": true
@@ -25,23 +21,12 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "files",
         "images",
+        "files",
         "videos"
       ],
       "plugin": "upload",
-      "required": true
-    },
-    "featured": {
-      "type": "boolean",
-      "default": false
-    },
-    "category": {
-      "type": "string",
-      "required": true
-    },
-    "free_shipping": {
-      "type": "boolean"
+      "required": false
     }
   }
 }

@@ -9,30 +9,19 @@
     "timestamps": true
   },
   "attributes": {
-    "products": {
-      "collection": "product",
-      "via": "orders",
-      "dominant": true
-    },
-    "number": {
+    "name": {
       "type": "string"
     },
+    "items": {
+      "type": "json"
+    },
     "total": {
-      "type": "float"
-    },
-    "subtotal": {
       "type": "decimal"
-    },
-    "taxes": {
-      "type": "float"
     },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "orders"
-    },
-    "product_qty": {
-      "type": "json"
     }
   }
 }
