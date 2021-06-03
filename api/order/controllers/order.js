@@ -8,24 +8,21 @@ const stripe = require("stripe")(api_key);
 
 module.exports = {
   create: async (ctx) => {
-    const { total, items, token, address } = JSON.parse(ctx.request.body);
-    // const { id } = ctx.state.user;
-
-    const stripeAmount = Math.floor(total * 100);
+    const { name, total, items, stripeTokenId } = ctx.request.body;
+    const { id } = ctx.state.user;
 
     const charge = await stripe.charges.create({
-      amount: stripeAmount,
+      amount: Math.round(total * 100),
       currency: "inr",
-      source: token,
-      description: `order ${new Date()} by ${ctx.state.user._id}`,
+      source: stripeTokenId,
+      description: `order ${new Date()} by ₹{ctx.state.user.username}`,
     });
 
     const order = await strapi.services.order.create({
-      user: ctx.state.user.id,
-      charge_id: charge.id,
-      amount: stripeAmount,
-      address,
+      name,
+      total,
       items,
+      user: id,
     });
     return order;
   },
