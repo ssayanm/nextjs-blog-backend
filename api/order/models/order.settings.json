@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "orders",
   "info": {
-    "name": "order"
+    "name": "order",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
@@ -22,6 +24,15 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "orders"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "biginteger"
     }
   }
 }
