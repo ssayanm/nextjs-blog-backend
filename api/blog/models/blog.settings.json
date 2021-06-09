@@ -58,6 +58,11 @@
       "type": "string",
       "required": false,
       "default": "Pleasant Smith"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "blogs"
     }
   }
 }

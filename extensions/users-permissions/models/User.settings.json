@@ -56,6 +56,10 @@
     "orders": {
       "via": "user",
       "collection": "order"
+    },
+    "blogs": {
+      "via": "user",
+      "collection": "blog"
     }
   }
 }
